@@ -6,12 +6,14 @@ version = "1.16.2"
 
 description = \
     """
-    Python pacage for array computing.
+    Python package for array computing.
     """
 
 build_requires = [
     "python-2.7"
 ]
+
+build_command = "py -m pip install {env.REZ_REPO_PAYLOAD_DIR}/numpy-{this.version}-cp27-cp27mu-manylinux1_x86_64.whl --prefix={root}"
 
 def commands():
     env.LD_LIBRARY_PATH.prepend("{root}/lib")
